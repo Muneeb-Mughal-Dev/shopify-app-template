@@ -1,0 +1,142 @@
+/* ------------------------ GLOBAL-VARIABLES-FOR-THEME ------------------------ */
+
+@layer base {
+    :root {
+        --background: 0, 0%, 100%
+        --foreground: 0, 0%, 0%;
+        --divider: 0, 0, 0, 0.15;
+
+        --default: 0, 0%, 100%
+        --default-50: 0, 0%, 98%;
+        --default-100: 240, 5%, 96%;
+        --default-200: 240, 6%, 90%;
+        --default-300: 240, 5%, 84%;
+        --default-400: 240, 5%, 65%;
+        --default-500: 0, 0%, 26%;
+        --default-600: 240, 5%, 34%;
+        --default-700: 240, 5%, 26%;
+        --default-800: 240, 4%, 16%;
+        --default-900: 240, 6%, 10%;
+        --default-hover: 240, 5%, 84%;
+        --default-active: 240, 5%, 65%;
+        --default-foreground: 0, 0%, 100%;
+
+        --primary: 215, 28%, 17%;
+        --primary-50: 213, 92%, 95%;
+        --primary-100: 212, 92%, 90%;
+        --primary-200: 212, 92%, 79%;
+        --primary-300: 212, 92%, 69%;
+        --primary-400: 212, 92%, 58%;
+        --primary-500: 215, 28%, 17%;
+        --primary-600: 212, 100%, 38%;
+        --primary-700: 212, 100%, 29%;
+        --primary-800: 212, 100%, 19%;
+        --primary-900: 212, 100%, 10%;
+        --primary-hover: 215, 18%, 29%;
+        --primary-active: 215, 28%, 17%;
+        --primary-foreground: 0, 0%, 100%;
+
+        --secondary: 270, 67%, 47%;
+        --secondary-50: 270, 62%, 95%;
+        --secondary-100: 270, 59%, 89%;
+        --secondary-200: 270, 59%, 79%;
+        --secondary-300: 270, 59%, 68%;
+        --secondary-400: 270, 59%, 58%;
+        --secondary-500: 270, 67%, 47%;
+        --secondary-600: 270, 67%, 38%;
+        --secondary-700: 270, 67%, 28%;
+        --secondary-800: 270, 67%, 19%;
+        --secondary-900: 270, 67%, 9%;
+        --secondary-hover: 270, 67%, 38%;
+        --secondary-active: 270, 67%, 28%;
+        --secondary-foreground: 210, 6%, 93%;
+
+        --danger: 339, 90%, 61%;
+        --danger-50: 339, 92%, 95%;
+        --danger-100: 340, 92%, 90%;
+        --danger-200: 339, 90%, 80%;
+        --danger-300: 339, 91%, 71%;
+        --danger-400: 339, 90%, 61%;
+        --danger-500: 339, 90%, 51%;
+        --danger-600: 339, 87%, 41%;
+        --danger-700: 339, 86%, 31%;
+        --danger-800: 339, 87%, 20%;
+        --danger-900: 340, 85%, 10%;
+        --danger-hover: 339, 90%, 51%;
+        --danger-active: 339, 87%, 41%;
+        --danger-foreground: 210, 6%, 93%;
+
+        --success: 146, 62%, 55%;
+        --success-50: 147, 64%, 95%;
+        --success-100: 146, 61%, 89%;
+        --success-200: 146, 62%, 77%;
+        --success-300: 146, 63%, 66%;
+        --success-400: 146, 62%, 55%;
+        --success-500: 146, 79%, 44%;
+        --success-600: 146, 80%, 35%;
+        --success-700: 146, 79%, 26%;
+        --success-800: 146, 80%, 17%;
+        --success-900: 146, 78%, 9%;
+        --success-hover: 146, 79%, 44%;
+        --success-active: 146, 80%, 35%;
+        --success-foreground: 210, 6%, 93%;
+
+        --warning: 37, 91%, 64%;
+        --warning-50: 55, 92%, 95%;
+        --warning-100: 37, 91%, 91%;
+        --warning-200: 37, 91%, 82%;
+        --warning-300: 37, 91%, 73%;
+        --warning-400: 37, 91%, 64%;
+        --warning-500: 37, 91%, 55%;
+        --warning-600: 37, 74%, 44%;
+        --warning-700: 37, 74%, 33%;
+        --warning-800: 37, 75%, 22%;
+        --warning-900: 37, 75%, 11%;
+        --warning-hover: 37, 91%, 55%;
+        --warning-active: 37, 74%, 44%;
+        --warning-foreground: 210, 6%, 93%;
+
+        --info: 190, 90%, 50%;
+        /* --info-50:;
+        --info-100:;
+        --info-200:;
+        --info-300:;
+        --info-400:;
+        --info-500:;
+        --info-600:;
+        --info-700:;
+        --info-800:;
+        --info-900:; */
+        --info-hover: 190, 90%, 50%;
+        --info-active: 190, 90%, 50%;
+        --info-foreground: 210, 6%, 93%;
+
+        --shadow-color-1: 0 0 0 / 0.02;
+        --shadow-color-2: 0 0 0 / 0.06;
+        --shadow-color-3: 0 0 0 / 0.3;
+        --shadow-color-4: 0 0 0 / 0.03;
+        --shadow-color-5: 0 0 0 / 0.08;
+        --shadow-color-6: 0 0 0 / 0.3;
+        --shadow-color-7: 0 0 0 / 0.04;
+        --shadow-color-8: 0 0 0 / 0.12;
+        --shadow-color-9: 0 0 0 / 0.3;
+       
+    }
+    }
+
+#nprogress {
+    @apply pointer-events-none;
+}
+
+#nprogress .bar {
+    @apply fixed left-0 top-0 z-[9999999] h-0.5 w-full bg-secondary;
+}
+
+#nprogress .peg {
+    @apply absolute right-0 block h-full w-24 opacity-100;
+    box-shadow:
+        0 0 10px #7828c8,
+        0 0 5px #7828c8;
+    -webkit-transform: rotate(3deg) translate(0px, -4px);
+    transform: rotate(3deg) translate(0px, -4px);
+}

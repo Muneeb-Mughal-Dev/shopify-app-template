@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "type": "module",
+  "license": "ISC",
+  "version": "0.0.1",
+  "name": "shopify-app-template",
+  "main": "web/server/server.ts",
+  "author": {
+    "name": "Muneeb Mughal",
+    "email": "muneebmughal3324@gmail.com"
+  },
+  "homepage": "https://github.com/Muneeb-Mughal-Dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Muneeb-Mughal-Dev/shopify-app-template.git"
+  },
+  "scripts": {
+    "shopify": "shopify",
+    "dev": "shopify app dev",
+    "info": "shopify app info",
+    "build": "shopify app build",
+    "deploy": "shopify app deploy",
+    "app:build": "node build.cjs",
+    "generate": "shopify app generate",
+    "extension": "shopify app generate extension",
+    "docs:generate": "cd web && node --no-warnings --loader ts-node/esm ./server/configs/swagger.ts",
+    "prettify": "cd web && npx prettier --write ./ && [ -d frontend ] && cd frontend && npx prettier --write ./",
+    "db:seed": "cd web && node --no-warnings --loader ts-node/esm node_modules/knex/bin/cli.js seed:run --knexfile=knexfile.ts --verbose",
+    "migration:run": "cd web && node --no-warnings --loader ts-node/esm node_modules/knex/bin/cli.js migrate:latest --knexfile=knexfile.ts --verbose",
+    "migration:fresh": "cd web && node --no-warnings --loader ts-node/esm node_modules/knex/bin/cli.js migrate:rollback --knexfile=knexfile.ts --verbose",
+    "seeder:make": "cd web && node --no-warnings --loader ts-node/esm node_modules/knex/bin/cli.js seed:make --knexfile=knexfile.ts -x ts --env development",
+    "migration:make": "cd web && node --no-warnings --loader ts-node/esm node_modules/knex/bin/cli.js migrate:make --knexfile=knexfile.ts -x ts --env development",
+    "migration:refresh": "cd web && node --no-warnings --loader ts-node/esm node_modules/knex/bin/cli.js migrate:rollback --knexfile=knexfile.ts --verbose && node --no-warnings --loader ts-node/esm node_modules/knex/bin/cli.js migrate:latest --knexfile=knexfile.ts --verbose"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "workspaces": [
+    "extensions/*",
+    "web/",
+    "web/frontend"
+  ]
+}

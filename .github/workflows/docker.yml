@@ -1,0 +1,45 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      VERSION: v1.0.${{ github.run_number }}
+
+    steps:
+      # Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Build the Docker image
+      - name: Build the Docker Image
+        run: |
+          echo "Building the Docker image for branch: ${{ github.ref_name }}"
+          docker compose build
+
+      # Deploy only on the main branch
+      # - name: Deploy to Server
+      #   if: github.ref_name == 'main'
+      #   uses: appleboy/ssh-action@master
+      #   with:
+      #     host: ${{ secrets.HOST }}
+      #     username: ${{ secrets.USERNAME }}
+      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #     port: 22
+      #     script: |
+      #       echo "Deploying application to the server for branch: ${{ github.ref_name }}"
+      #       cd /var/www/shoppable-video-gallery
+      #       git pull origin main
+      #       docker compose build
+      #       docker compose up -d

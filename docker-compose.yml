@@ -1,0 +1,16 @@
+services:
+  app:
+    container_name: shopify-template-app
+    image: template/shopify-app:1.0.0
+    build:
+      context: .
+      args:
+        SHOPIFY_API_KEY: <Shopify-api-key>
+        PORT: 8081
+    ports:
+      - 8081:8081
+    environment:
+      - PORT=8081
+      - NODE_ENV=production
+      - SHOPIFY_API_KEY=<Shopify-api-key>
+      - HOSTNAME=<production-url>
