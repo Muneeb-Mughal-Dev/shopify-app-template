@@ -154,5 +154,5 @@ fly.toml
 
 .shopify/*
 .shopify.lock
-# shopify.app.toml
+shopify.app.toml
 shopify.app.*.toml

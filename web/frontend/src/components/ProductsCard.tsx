@@ -18,7 +18,7 @@ export function ProductsCard() {
     } = useQuery({
         queryKey: ['productCount'],
         queryFn: async () => {
-            const response = await fetch('/api/playlists')
+            const response = await fetch('/api/test/count')
             return await response.json()
         },
         refetchOnWindowFocus: false,
@@ -31,7 +31,7 @@ export function ProductsCard() {
 
     const handlePopulate = async () => {
         setPopulating(true)
-        const response = await fetch('/api/playlists', { method: 'POST' })
+        const response = await fetch('/api/test', { method: 'POST' })
 
         if (response.ok) {
             await refetchProductCount()
@@ -54,7 +54,7 @@ export function ProductsCard() {
                 <Text as='h4' variant='headingMd'>
                     {t('ProductsCard.totalProductsHeading')}
                     <Text variant='bodyMd' as='p' fontWeight='semibold'>
-                        {isLoadingCount ? '-' : data.data.length}
+                        {isLoadingCount ? '-' : data?.count}
                     </Text>
                 </Text>
             </div>
