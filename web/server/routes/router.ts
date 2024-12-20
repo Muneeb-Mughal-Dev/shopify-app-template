@@ -1,10 +1,7 @@
-import { PlaylistRoute, ShopRoute, VideoRoute } from '#routes/app/index'
-// import { ExtensionPlaylistRoute, ExtensionShopRoute, ExtensionVideoRoute } from '#routes/extension/index'
+import { ShopRoute, TestRoute } from '#routes/app/index'
 import { HeaderRoute, InstalledRoute } from '#routes/post/index'
 import { ShopifyRoute, WebhooksRoute } from '#routes/pre/index'
 
+export const appRoutes = [new ShopRoute(), new TestRoute()]
 export const preRoutes = [new WebhooksRoute(), new ShopifyRoute()]
-export const appRoutes = [new ShopRoute(), new PlaylistRoute(), new VideoRoute()]
-// export const extensionRoutes = [new ExtensionShopRoute(), new ExtensionPlaylistRoute(), new ExtensionVideoRoute()]
-
 export const postRoutes = [new HeaderRoute(), new InstalledRoute()]
